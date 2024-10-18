@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 import pandas as pd
 # Load the saved model
-model = joblib.load('salary_prediction_model_new.pkl')
+model = joblib.load('salary_prediction_model.pkl')
 base_salary_df = pd.read_csv("ex_sal - Sheet1.csv")
 # Set the background color to white using custom CSS
 st.markdown(
@@ -33,7 +33,7 @@ defect_rate = st.number_input('Defect Rate', min_value=0.0, max_value=100.0)
 # Prediction button
 if st.button('Predict Salary and Incentive'):
     # Make prediction using input values
-    features = np.array([[experience_years]])
+    features = np.array([[experience_years, skill_level, defect_rate]])
     predicted_salary = model.predict(features)[0]
 
     # Find the base salary for the given experience
