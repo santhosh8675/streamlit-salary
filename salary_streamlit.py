@@ -40,7 +40,7 @@ if st.button('Predict Salary and Incentive'):
     base_salary = base_salary_df.loc[base_salary_df['Experience'] == experience_years, 'Base_Salary'].values[0]
     
     # Calculate incentive (predicted salary - base salary)
-    incentive =  base_salary - predicted_salary
+    incentive =  abs(predicted_salary) - base_salary
     
     # Display the results
     st.write(f"Predicted Salary: ₹{predicted_salary:.2f}")
