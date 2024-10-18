@@ -43,6 +43,6 @@ if st.button('Predict Salary and Incentive'):
     incentive =  abs(predicted_salary) - base_salary
     
     # Display the results
-    st.write(f"Predicted Salary: ₹{predicted_salary:.2f}")
+    st.write(f"Predicted Salary: ₹{abs(predicted_salary):.2f}")
     st.write(f"Base Salary: ₹{base_salary:.2f}")
     st.write(f"Incentive: ₹{incentive:.2f}")
